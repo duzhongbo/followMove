@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>html5</title>
+</head>
+<body>
+	
+<style type="text/css">
+
+.box{width:200px;height:200px;background-color:#ccc;margin-left:500px;}
+.pop{width:100px;height:100px;background-color:#999;position:absolute;/*display:none;*/}
+
+</style>
+
+<div class="pop"></div>
+<div class="box"></div>
+
+
+
+<script type="text/javascript">
+var docW = document.documentElement.offsetWidth;
+var pop = document.querySelector('.pop');
+var popW = pop.offsetWidth;
+var box = document.querySelector('.box');
+box.onmouseover=function(){
+	// pop.style.display='block';
+}
+box.onmouseout=function(){
+	// pop.style.display='none';
+}
+box.onmousemove=function(e){
+	var clientX = e.clientX;
+	var w = docW - clientX;
+	if(w>popW+10){
+		pop.style.left = clientX + 10 +'px';
+	}else{
+		pop.style.left = clientX - popW - 10 +'px';
+	}
+	pop.style.top = e.clientY + 10 + 'px';
+}
+
+</script>
+
+</body>
+</html>
