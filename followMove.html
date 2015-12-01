@@ -7,9 +7,8 @@
 <body>
 	
 <style type="text/css">
-
 .box{width:200px;height:200px;background-color:#ccc;margin-left:500px;}
-.pop{width:100px;height:100px;background-color:#999;position:absolute;/*display:none;*/}
+.pop{width:100px;height:100px;background-color:#999;position:absolute;top:-1000px;}
 
 </style>
 
@@ -24,14 +23,15 @@ var pop = document.querySelector('.pop');
 var popW = pop.offsetWidth;
 var box = document.querySelector('.box');
 box.onmouseover=function(){
-	// pop.style.display='block';
+	pop.style.display='block';
 }
 box.onmouseout=function(){
-	// pop.style.display='none';
+	pop.style.display='none';
 }
 box.onmousemove=function(e){
 	var clientX = e.clientX;
 	var w = docW - clientX;
+	console.log(w,popW+10);
 	if(w>popW+10){
 		pop.style.left = clientX + 10 +'px';
 	}else{
