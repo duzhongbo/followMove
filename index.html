@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>html5</title>
+</head>
+<body>
+<style type="text/css">
+html,body{height:100%;}
+body{margin:0;padding:0;}
+
+
+</style>
+
+<script type="text/javascript">
+// 获取根元素html的宽度(浏览器的可视区宽度)
+var docW = document.documentElement.offsetWidth;
+// 获取body元素的宽度(一般小于浏览器可视区宽度，因为body元素margin默认一般有值，如果margin清零，那么docW,docW2值相同)
+var docW2 = document.body.offsetWidth;	
+// clientX获取光标相对于浏览器可视区的位置
+document.getElementsByTagName('body')[0].onclick=function(e){
+	console.log("hello world!");
+	console.log(e.clientX,e.clientY);
+};
+console.log(docW,docW2);
+</script>
+
+</body>
+</html>
